@@ -51,12 +51,13 @@ interface MarsApiService {
      * HTTP method
      */
     @GET("photos")
-    fun getPhotos(): List<MarsPhoto>
+   suspend fun getPhotos(): List<MarsPhoto>
 }
 
 /**
  * A public Api object that exposes the lazy-initialized Retrofit service
  */
 object MarsApi {
-    val retrofitService: MarsApiService by lazy { retrofit.create(MarsApiService::class.java) }
+    val retrofitService : MarsApiService by lazy { 
+       retrofit.create(MarsApiService::class.java) }
 }
