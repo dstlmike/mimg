@@ -51,7 +51,7 @@ interface MarsApiService {
      * HTTP method
      */
     @GET("photos")
-    suspend fun getPhotos(): List<MarsPhoto>
+    fun getPhotos(): List<MarsPhoto>
 }
 
 /**
